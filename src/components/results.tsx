@@ -39,6 +39,8 @@ const Results: React.FC<Props> = ({ setStatus, results }) => {
 
   useEffect(() => {
     document.documentElement.scrollTop = 0;
+    console.log(results)
+    console.log(getResults(results));
   }, [])
   
   

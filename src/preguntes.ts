@@ -1,4 +1,4 @@
-export const json = {
+export const preguntes = {
   "elements": [
     {
       "type": "matrix",

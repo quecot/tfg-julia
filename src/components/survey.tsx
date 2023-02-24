@@ -3,7 +3,7 @@ import {StylesManager, Model} from "survey-core";
 import {Survey} from "survey-react-ui";
 import "survey-core/defaultV2.css";
 import "../index.css";
-import { json } from "../json"
+import { preguntes } from "../preguntes"
 
 interface Props {
   setStatus: React.Dispatch<React.SetStateAction<string>>
@@ -12,11 +12,11 @@ interface Props {
 
 StylesManager.applyTheme("defaultV2");
 const SurveyComponent: React.FC<Props> = ({setStatus, setResults}) => {
-  const survey = new Model(json);
+  const survey = new Model(preguntes);
 
   const handleSubmit = () => {
     const data = survey.getPlainData()
-    if (data[0].data!.length === json.elements[0].rows.length) {
+    if (data[0].data!.length === preguntes.elements[0].rows.length) {
       setResults(data);
       setStatus('results');
     } else {
